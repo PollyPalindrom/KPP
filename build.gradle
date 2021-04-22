@@ -1,0 +1,31 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation('org.springframework.boot:spring-boot-starter-test')
+    implementation group: 'org.thymeleaf', name: 'thymeleaf', version: '3.0.12.RELEASE'
+    compile group: 'javax.validation',name:'validation-api', version:'2.0.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-validator', version: '7.0.0.Final'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.4.4'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+    implementation group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.4.4'
+
+}
+
+
+test {
+    useJUnitPlatform()
+}
