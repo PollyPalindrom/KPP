@@ -18,9 +18,9 @@ public class InteriorLogic {
         key.setPrevCopy(temp);
         key.setName(name);
         if (copyCounter.isRunnable()) {
-            copyCounter.start();
             copyCounter.incrementCounter();
         } else {
+            copyCounter.start();
             copyCounter.incrementCounter();
         }
         if (cache.IsContains(key)) {

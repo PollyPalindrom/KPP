@@ -9,6 +9,11 @@ public class Copy {
         this.content2="";
         this.content3="";
     }
+    public Copy(String cont1,String cont2) {
+        this.content1=cont1;
+        this.content2=cont2;
+        this.content3="";
+    }
     public void setContent1(String name){
         this.content1=name;
     }
