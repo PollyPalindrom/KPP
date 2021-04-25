@@ -42,13 +42,16 @@ public class CopyController {
         copyList.forEach((tmp) -> {
             logic.returnNewValue(tmp.getContent1(), tmp.getContent2(), temp1);
         });
-//        List<Vector> vectorList = vectorBodyList.stream()
-//                .map((body) -> new Vector(body.getX1(), body.getY1(), body.getX2(), body.getY2()))
-//                .collect(Collectors.toList());
-//        AverageValues values = new AverageValues(VectorService.INSTANCE.calcAverageX1(vectorList), VectorService.INSTANCE.calcAverageX2(vectorList),
-//                VectorService.INSTANCE.calcAverageY1(vectorList), VectorService.INSTANCE.calcAverageY2(vectorList),
-//                VectorService.INSTANCE.calcAverageNorma(vectorList), VectorService.INSTANCE.calcAverageProjectionX(vectorList),
-//                VectorService.INSTANCE.calcAverageProjectionY(vectorList));
-        return new ResponseEntity<>("Ok", HttpStatus.OK);
+        long counter1 = copyList
+                .stream()
+                .filter(p -> p.getContent2() == 1)
+                .mapToInt(IncomingInformation::getContent2)
+                .count();
+        long counter2 = copyList
+                .stream()
+                .filter(p -> p.getContent2() == 2)
+                .mapToInt(IncomingInformation::getContent2)
+                .count();
+        return new ResponseEntity<>(counter1 +" раз нажали первую клавишу\n"+ counter2+" раз нажали вторую клавишу", HttpStatus.OK);
     }
 }
