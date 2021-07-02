@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.LinkedList;
 import java.util.List;
 
+//heeeeej
 @RestController// все методы класса возвращают именно те данные, которые надо переслать клиенту
 public class CopyController {
     private static Logger logger = LogManager.getLogger(CopyController.class);
